@@ -53,3 +53,22 @@ A couple of pretrained models are provided. They are trained using softmax loss 
 
 ## Performance
 The accuracy on LFW for the model [20180402-114759](https://drive.google.com/open?id=1EXPBSXwTaqrSC0OhUdXNmKSh9qJUQ55-) is 0.99650+-0.00252. A description of how to run the test can be found on the page [Validate on LFW](https://github.com/davidsandberg/facenet/wiki/Validate-on-lfw). Note that the input images to the model need to be standardized using fixed image standardization (use the option `--use_fixed_image_standardization` when running e.g. `validate_on_lfw.py`).
+
+——————————以上是论文原作者提供的————————
+下面是我自己配置facenet的过程
+1.安装依赖库
+TensorFlow  （根据服务器上cuda版本安装gpu版本或者安装cpu版本也行，我安装的是1.7版本）
+scipy, scikit-learn, opencv-python, h5py, matplotlib, Pillow, requests, psutil 
+
+2.下载facenet并配置环境变量
+下载指令：git clone --recursive https://github.com/davidsandberg/facenet.git
+注意一下存放路径，并设置一下环境变量。例如我存放的路径是：home/caishanshan/
+设置环境变量vim ~/.bashrc
+添加：
+export PYTHONPATH=$PYTHONPATH:/home/caishanshan/Downloads/facenet/src
+之后保存，终端执行：source ~/.bashrc命令，使刚刚配置的环境变量立即生效
+
+3、准备LFW数据集
+使用链接：http://vis-www.cs.umass.edu/lfw/lfw.tgz，将lfw数据集下载完毕。
+下载完成后，把数据解压到facenet目录下的..facenet\data\lfw\raw中。然后，在路径..facenet\data\lfw下，再新建一个空文件夹命名为"lfw_160"。
+（注：raw文件夹用以保存分辩率是250*250的原始下载图片集，lfw_160文件夹用以保存第4步骤经过预处理后得到的分辨率为160*160的图片集。
