@@ -55,6 +55,7 @@ A couple of pretrained models are provided. They are trained using softmax loss 
 The accuracy on LFW for the model [20180402-114759](https://drive.google.com/open?id=1EXPBSXwTaqrSC0OhUdXNmKSh9qJUQ55-) is 0.99650+-0.00252. A description of how to run the test can be found on the page [Validate on LFW](https://github.com/davidsandberg/facenet/wiki/Validate-on-lfw). Note that the input images to the model need to be standardized using fixed image standardization (use the option `--use_fixed_image_standardization` when running e.g. `validate_on_lfw.py`).
 
 ——————————————————以上为论文作者的————————————————
+
 下面是我自己配置facenet的过程
 1.安装依赖库
 TensorFlow  （根据服务器上cuda版本安装gpu版本或者安装cpu版本也行，我安装的是1.7版本）
